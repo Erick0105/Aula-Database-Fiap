@@ -81,3 +81,18 @@ fk_cargo number(4) constraint func_cargo_fk references cargo);
 
 -- fk: column_name datatype(syze) [constraint] references table_name
 -- references é a criação da foreign key(fk) ou chave estrangeira
+
+create table Venda(
+num_venda number(6) constraint venda_num_pk Primary key,
+dt_venda date constraint venda_dt_nn not null,
+ttl_venda number(10,2) constraint venda_ttl_nn not null
+)
+
+create table Peca (
+id_peca Number(6) constraint peca_id_pk Primary Key,
+nm_peca varchar(50) constraint peca_nm_nn Not Null
+                    constraint peca_nm_pk unique,
+qtd_peca number(6,2) constraint peca_qtd_nn not null,
+preco_peca number(8,2)
+fk_venda number(6) constraint venda_num_fk references Venda
+)
