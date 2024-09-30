@@ -109,3 +109,16 @@ insert into item_pedido values ('189','78','45');
 insert into item_pedido values ('143','31','20');
 insert into item_pedido values ('143','78','10');
 commit;
+
+--Criando Relatórios - DQL
+
+/*
+Sintaxe: SELECT * FROM table_name;
+
+         SELECT column_name1, column_name2,...., column_nameN
+         from table_name;
+*/
+
+--Exemplo DELETE
+SELECT * FROM cliente;
+SELECT nome_clie, cidade from CLIENTE;
