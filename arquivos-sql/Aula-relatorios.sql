@@ -167,3 +167,18 @@ SELECT * from CLIENTE WHERE uf = 'SP';
 
 --Crie um relatório que exiba os clientes que moram no estado de São Paulo,  atenção a letras maiusculas ou minisculas.
 SELECT * from CLIENTE WHERE uf = 'SP' or uf = 'sp';
+
+/*Exercicios
+
+- Mostre os dados da tabela produto.
+- Mostre os produtos que não custam mais de R$2,00.
+- Quem são os vendedores que ganham acima de R$3.500,00? Exiba o nome e salário classificados pelo salário de forma decrescente
+- Mostre os pedidos dos clientes de código 130 até 800.
+- Quem são os clientes (nome, uf e ie) que não moram no estado do Rio de Janeiro e Minas Gerais e que a inscrição estadual seja menor que 2000?
+*/
+
+SELECT * from PRODUTO;
+SELECT * FROM PRODUTO WHERE val_unit < 2;
+SELECT nome_ven, salario_fixo from Vendedor where salario_fixo > 3500 ORDER by 2 DESC;
+SELECT * from Pedido where cod_clie > 130 AND cod_clie < 800;
+SELECT nome_clie, uf, ie from CLIENTE WHERE uf != 'MG' or uf != 'RJ' AND ie < 2000;
