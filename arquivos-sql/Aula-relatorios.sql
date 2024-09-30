@@ -154,3 +154,16 @@ SELECT * FROM CLIENTE order BY 2;
 SELECT nome_clie, uf FROM cliente order by 2;
 SELECT nome_clie, uf FROM cliente order by 2, 1;
 SELECT nome_clie, uf FROM cliente order by 2, 1 DESC;
+
+
+/*Filtrando Linhas
+comando WHERE = update e DELETE*/
+
+SELECT * from CLIENTE;
+
+/*Exemplos:
+Crie um relatório que exiba os clientes que moram no estado de São Paulo*/
+SELECT * from CLIENTE WHERE uf = 'SP';
+
+--Crie um relatório que exiba os clientes que moram no estado de São Paulo,  atenção a letras maiusculas ou minisculas.
+SELECT * from CLIENTE WHERE uf = 'SP' or uf = 'sp';
