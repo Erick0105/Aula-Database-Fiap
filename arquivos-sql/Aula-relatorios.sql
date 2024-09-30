@@ -138,3 +138,19 @@ SELECT DESCRICAO, val_unit from PRODUTO;
 --Exemplo:
 select * from VENDEDOR;
 SELECT nome_ven "Nome", salario_fixo "salário vendedor" from vendedor;
+
+
+/*Classificando a saída de dados
+Comando Order by column_name TYPE
+TYPE - asc - crescente - DEFAULT
+     - desc - decrescente
+*/
+
+--Exemplos:
+SELECT * FROM vendedor order by nome_ven;
+SELECT * FROM vendedor order by nome_ven DESC;
+
+SELECT * FROM CLIENTE order BY 2;
+SELECT nome_clie, uf FROM cliente order by 2;
+SELECT nome_clie, uf FROM cliente order by 2, 1;
+SELECT nome_clie, uf FROM cliente order by 2, 1 DESC;
