@@ -122,3 +122,19 @@ Sintaxe: SELECT * FROM table_name;
 --Exemplo DELETE
 SELECT * FROM cliente;
 SELECT nome_clie, cidade from CLIENTE;
+
+--Criar um relatório que exiba os dados dos vendedores.
+SELECT * from VENDEDOR;
+
+--Mostre o nome do produto e seu preço
+desc PRODUTO;
+SELECT DESCRICAO, val_unit from PRODUTO;
+
+/*Apelidando as colunas
+- colocar sempre após o nome da colunas
+- para duas ou + palavras usa-SELECT
+*/
+
+--Exemplo:
+select * from VENDEDOR;
+SELECT nome_ven "Nome", salario_fixo "salário vendedor" from vendedor;
