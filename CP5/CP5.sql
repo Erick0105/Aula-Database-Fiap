@@ -87,3 +87,5 @@ SELECT * from FUNCIONARIO WHERE CIDADE = 'São Paulo' or CIDADE = 'Rio de Janeir
 --Select de Funcionarios com salário superior a R$1.000 e DataNasci entre 1970 e 1980, ordenado pelo nome
 
 SELECT * from FUNCIONARIO WHERE SALARIO > 1000 AND DataNasci >= '01-JAN-1970' and DataNasci <= '31-DEC-1980' ORDER BY PrimerioNome;
+
+COMMIT;
