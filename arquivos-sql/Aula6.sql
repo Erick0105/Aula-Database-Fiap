@@ -38,3 +38,15 @@ SELECT * FROM PRODUTO where UNIDADE in('KG','M');
 
 --Quais pedidos possume código entre 50 e 150 e são dos vendedores de código 209,101
 SELECT * FROM PEDIDO where NUM_PEDIDO BETWEEN 50 and 150 and COD_VEN in(209,101) ORDER by COD_VEN;
+
+/*
+Negação: not
+not BETWEEN / not IN
+*/
+
+--Quem são os produtos que não tenham unidade de medida: Kg, M?
+SELECT * from PRODUTO where UNIDADE not in ('KG', 'M');
+
+--Criar um relatório que exiba todos os dados dos clientes que não pertencem ao intervalo de código 100 até 600
+SELECT * FROM CLIENTE where COD_CLIE not BETWEEN 100 and 600;
+
