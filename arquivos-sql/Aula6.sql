@@ -50,3 +50,36 @@ SELECT * from PRODUTO where UNIDADE not in ('KG', 'M');
 --Criar um relatório que exiba todos os dados dos clientes que não pertencem ao intervalo de código 100 até 600
 SELECT * FROM CLIENTE where COD_CLIE not BETWEEN 100 and 600;
 
+
+--Aprendendo a usar o Operador Like
+--Quem são os clientes que possuem em seu nome a letra 'A'
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE like '%a%' or NOME_CLIE LIKE '%A%'; 
+
+
+/*
+O percentual % é utilizado para pesquisar aqueles que estão em qualquer posição e em qualquer quantidade
+Existe também o underline _ que é quando se pesquisa por uma posição especifica (quantidade especifica)*/
+
+
+--Quem são os clientes que possuem em seu nome a letra 'A' no final?
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE like '%a';
+
+--Quem são os clientes que possuem em seu nome a letra 'A' no inicio?
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE like 'A%'; 
+
+--Quem são os clientes que possuem 5 letras em seu nome?
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE like '_____'; 
+
+--Quem são os clientes que possuem na 2º posição do seu nome a letra 'a'?
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE like '_a%'; 
+
+--Quem são os clientes que possuem na penúltima posição do seu nome a letra "a"?
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE like '%a_'; 
+
+-- Not like = Negação
+
+--Quem são os clientes que não possuem a letra 'a' em seu nome?
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE not LIKE '%a%';
+
+--Mostre o nome dos cliente que possuem a letra 'i' ou a letra 'o' em seu nome.
+SELECT NOME_CLIE from CLIENTE where NOME_CLIE LIKE '%i%' and NOME_CLIE not LIKE '%o%' or NOME_CLIE LIKE '%o%' and NOME_CLIE not LIKE '%i%';
