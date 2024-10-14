@@ -21,3 +21,20 @@ SELECT * FROM CLIENTE where NOME_CLIE BETWEEN 'A' and 'Q';
 
 --Gerar um relatório que mostra o nome do cliente o estado onde mora, desde que seja do estado: sp,rj,mg
 
+--Metodo Tradicional
+SELECT * FROM CLIENTE where uf='SP' or UF = 'RJ' or UF = 'MG';
+--Operador de BD: in(list)
+SELECT * from CLIENTE where UF in ('SP','RJ','MG');
+
+
+--Crie um relatório que mostre os clientes de código: 870,110,830,157.
+SELECT * from CLIENTE where COD_CLIE IN(870,110,830,157);
+
+--Criar um relatório que mostre os clientes no intervalo de código entre 100 e 300 e 500 e 700;
+SELECT * FROM CLIENTE where COD_CLIE BETWEEN 100 and 300 or COD_CLIE BETWEEN 500 and 750 ORDER BY 1;
+
+--Quem são os produtos com unidade de medida: Kg, M?
+SELECT * FROM PRODUTO where UNIDADE in('KG','M');
+
+--Quais pedidos possume código entre 50 e 150 e são dos vendedores de código 209,101
+SELECT * FROM PEDIDO where NUM_PEDIDO BETWEEN 50 and 150 and COD_VEN in(209,101) ORDER by COD_VEN;
