@@ -83,3 +83,25 @@ SELECT NOME_CLIE from CLIENTE where NOME_CLIE not LIKE '%a%';
 
 --Mostre o nome dos cliente que possuem a letra 'i' ou a letra 'o' em seu nome.
 SELECT NOME_CLIE from CLIENTE where NOME_CLIE LIKE '%i%' and NOME_CLIE not LIKE '%o%' or NOME_CLIE LIKE '%o%' and NOME_CLIE not LIKE '%i%';
+
+/*
+Operadores Matemáticos de grupo - Funções que juntam tudo e retorna uma linha de resposta
+
+
+COUNT - Retorna a quantidade de linhas (se usa normalmente em chave primaria ou aquelas que são Not Null)
+
+Mostre quantos clientes existem na tabela cliente*/
+SELECT COUNT(COD_CLIE) from CLIENTE;
+
+--Perigoso:
+SELECT COUNT(*), COUNT(CEP) FROM CLIENTE;
+
+Quantos clientes são do estado de São Paulo?
+
+SELECT COUNT(UF) FROM CLIENTE where uf in 'SP';
+
+SELECT max(SALARIO_FIXO), --maior Valor
+min(SALARIO_FIXO), --menor Valor
+avg(SALARIO_FIXO), -- Média Salaria
+sum(SALARIO_FIXO) --Somatória
+from VENDEDOR;
