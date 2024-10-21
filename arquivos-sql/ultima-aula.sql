@@ -19,9 +19,7 @@ where SALARIO_FIXO in (SELECT max(SALARIO_FIXO) from VENDEDOR);
 
 --Exibir o nome do vendedor que tem o maior e menor salários
 SELECT NOME_VEN, SALARIO_FIXO from VENDEDOR where SALARIO_FIXO in 
-(SELECT max(SALARIO_FIXO) from VENDEDOR, SELECT min(SALARIO_FIXO) from VENDEDOR);
-
-SELECT * from CLIENTE where COD_CLIE IN(870,110,830,157);
+(SELECT max(SALARIO_FIXO) from VENDEDOR) or SALARIO_FIXO in(SELECT min(SALARIO_FIXO) from VENDEDOR);
 
 --Funções caracteres
 
@@ -84,3 +82,19 @@ SELECT nm_fun, NM_CARGO from FUNCIONARIO left join cargo on id_cargo = FK_CARGO 
 
 --right exclusive
 SELECT nm_fun, NM_CARGO from FUNCIONARIO right join cargo on id_cargo = FK_CARGO where FK_CARGO is NULL;
+
+
+/*Exercícios 
+
+Exibir o nome do cliente e seus pedidos (número)*/
+SELECT NOME_CLIE, NUM_PEDIDO from CLIENTE left join PEDIDO on CLIENTE.COD_CLIE = PEDIDO.COD_CLIE; 
+
+
+--Exibir o nome do vendedor e seus pedidos (número)
+SELECT NOME_VEN, NUM_PEDIDO from VENDEDOR left join PEDIDO on VENDEDOR.COD_VEN = PEDIDO.COD_VEN; 
+
+
+--Exibir o nome do cliente, vendedor e seus pedidos (número)
+SELECT NOME_CLIE, NOME_VEN, NUM_PEDIDO from CLIENTE left join PEDIDO on CLIENTE.COD_CLIE = PEDIDO.COD_CLIE where NOME_VEN in(SELECT NOME_VEN from VENDEDOR left join PEDIDO on VENDEDOR.COD_VEN = PEDIDO.COD_VEN);
+
+SELECT NOME_CLIE,NUM_PEDIDO, NOME_VEN  from PEDIDO Inner join VENDEDOR on VENDEDOR.COD_VEN = PEDIDO.COD_VEN inner join CLIENTE on CLIENTE.COD_CLIE = pedido.COD_CLIE order by 3;
