@@ -77,3 +77,10 @@ SELECT nm_fun, NM_CARGO from FUNCIONARIO Inner join cargo on id_cargo = FK_CARGO
 SELECT nm_fun, NM_CARGO from FUNCIONARIO left join cargo on id_cargo = FK_CARGO;
 --Aqui é o lado direito mais a igualdade
 SELECT nm_fun, NM_CARGO from FUNCIONARIO right join cargo on id_cargo = FK_CARGO;
+
+--Apenas a diferença (só existe em um lado)
+--left exclusive
+SELECT nm_fun, NM_CARGO from FUNCIONARIO left join cargo on id_cargo = FK_CARGO where FK_CARGO is NULL;
+
+--right exclusive
+SELECT nm_fun, NM_CARGO from FUNCIONARIO right join cargo on id_cargo = FK_CARGO where FK_CARGO is NULL;
